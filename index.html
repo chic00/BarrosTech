@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barros Tech - Soluções em Tecnologia da Informação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#1a237e',secondary:'#f5f5f5'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+color: #333333;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Poppins', sans-serif;
+}
+.hero-bg {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20technology%20background%20with%20abstract%20digital%20elements%2C%20soft%20gradient%20from%20dark%20blue%20to%20light%20blue%20on%20the%20right%20side%2C%20clean%20minimalist%20design%2C%20perfect%20for%20text%20overlay%20on%20the%20left%20side%2C%20high-quality%20professional%20corporate%20look%2C%20subtle%20tech%20pattern&width=1920&height=800&seq=12345&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.client-logo {
+filter: grayscale(100%);
+transition: all 0.3s ease;
+}
+.client-logo:hover {
+filter: grayscale(0%);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #1a237e;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Barros Tech</a>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#inicio" class="text-gray-700 hover:text-primary font-medium transition-colors">Início</a>
+<a href="#sobre" class="text-gray-700 hover:text-primary font-medium transition-colors">Sobre</a>
+<a href="#servicos" class="text-gray-700 hover:text-primary font-medium transition-colors">Serviços</a>
+<a href="#cases" class="text-gray-700 hover:text-primary font-medium transition-colors">Cases</a>
+<a href="#contato" class="text-gray-700 hover:text-primary font-medium transition-colors">Contato</a>
+</nav>
+<div class="flex items-center">
+<a href="#contato" class="hidden md:inline-block bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Fale Conosco</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-md" id="mobile-menu">
+<div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+<a href="#inicio" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Início</a>
+<a href="#sobre" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Sobre</a>
+<a href="#servicos" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Serviços</a>
+<a href="#cases" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Cases</a>
+<a href="#contato" class="text-gray-700 hover:text-primary font-medium py-2 transition-colors">Contato</a>
+<a href="#contato" class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors inline-block text-center whitespace-nowrap">Fale Conosco</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="inicio" class="hero-bg pt-28 pb-16 md:pt-36 md:pb-24">
+<div class="container mx-auto px-4 w-full">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 text-white z-10">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Transformação Digital para seu Negócio</h1>
+<p class="text-lg md:text-xl mb-8 max-w-2xl">Soluções completas em TI para impulsionar sua empresa no mundo digital. Tecnologia de ponta com atendimento personalizado.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#servicos" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Conheça Nossas Soluções</a>
+<a href="#contato" class="bg-white text-primary px-6 py-3 !rounded-button font-medium hover:bg-gray-100 transition-colors whitespace-nowrap">Fale com um Especialista</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sobre Nós -->
+<section id="sobre" class="py-16 md:py-24 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre a Barros Tech</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Há mais de 10 anos transformando desafios em oportunidades através da tecnologia.</p>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+<div class="w-full md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=modern%20office%20environment%20with%20diverse%20team%20of%20IT%20professionals%20working%20together%2C%20clean%20and%20bright%20workspace%20with%20computers%20and%20technology%2C%20professional%20corporate%20setting%2C%20natural%20lighting%2C%20collaborative%20atmosphere&width=600&height=400&seq=12346&orientation=landscape" alt="Equipe Barros Tech" class="w-full h-auto rounded-lg shadow-lg object-cover object-top">
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-2xl font-bold mb-4">Nossa História</h3>
+<p class="text-gray-700 mb-6">Fundada em 2013 por Francisco Barros, a Barros Tech nasceu com o propósito de oferecer soluções tecnológicas acessíveis e eficientes para empresas de todos os portes. Começamos como uma pequena consultoria e hoje somos referência em soluções completas de TI no mercado brasileiro.</p>
+<p class="text-gray-700 mb-6">Nossa equipe é formada por profissionais altamente qualificados e apaixonados por tecnologia, sempre em busca das melhores práticas e inovações para atender às necessidades específicas de cada cliente.</p>
+<p class="text-gray-700">Acreditamos que a tecnologia deve ser uma aliada do crescimento empresarial, e não um obstáculo. Por isso, desenvolvemos soluções personalizadas que se adaptam à realidade de cada negócio.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-secondary p-8 rounded-md shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-flag-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Missão</h3>
+<p class="text-gray-700">Oferecer soluções tecnológicas inovadoras e eficientes que impulsionem o crescimento e a competitividade de nossos clientes, através de um atendimento personalizado e de excelência.</p>
+</div>
+<div class="bg-secondary p-8 rounded-md shadow-md">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-eye-line ri-lg text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Visão</h3>
+<p class="text-gray-700">Ser reconhecida como referência nacional em soluções de TI, destacando-se pela qualidade dos serviços, inovação constante e compromisso com o sucesso dos clientes.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Serviços -->
+<section id="servicos" class="py-16 md:py-24 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Nossos Serviços</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Soluções completas para todas as necessidades tecnológicas da sua empresa.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Serviço 1 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-server-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Infraestrutura de TI</h3>
+<p class="text-gray-700 mb-4">Soluções completas para sua infraestrutura, incluindo servidores, redes, cloud computing e virtualização.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Serviço 2 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-customer-service-2-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Suporte Técnico</h3>
+<p class="text-gray-700 mb-4">Suporte técnico especializado 24/7, remoto ou presencial, para manter sua operação funcionando sem interrupções.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Serviço 3 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-code-s-slash-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Desenvolvimento de Software</h3>
+<p class="text-gray-700 mb-4">Desenvolvimento de sistemas, aplicativos e plataformas personalizadas para atender às necessidades específicas do seu negócio.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Serviço 4 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-shield-check-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Segurança da Informação</h3>
+<p class="text-gray-700 mb-4">Proteção completa para seus dados e sistemas, incluindo firewall, antivírus, backup e recuperação de desastres.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Serviço 5 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-line-chart-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Consultoria Tecnológica</h3>
+<p class="text-gray-700 mb-4">Orientação estratégica para alinhar sua infraestrutura de TI aos objetivos de negócio, otimizando investimentos e resultados.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Serviço 6 -->
+<div class="bg-white p-8 rounded-lg shadow-md service-card transition-all duration-300">
+<div class="w-14 h-14 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-6">
+<i class="ri-cloud-line ri-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">Cloud Computing</h3>
+<p class="text-gray-700 mb-4">Soluções em nuvem para armazenamento, processamento e gerenciamento de dados, com maior segurança e flexibilidade.</p>
+<a href="#contato" class="text-primary font-medium flex items-center">
+Saiba mais <i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Cases de Sucesso -->
+<section id="cases" class="py-16 md:py-24 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Cases de Sucesso</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Conheça alguns dos projetos que transformaram o negócio de nossos clientes.</p>
+</div>
+<div class="relative overflow-hidden" id="cases-slider">
+<div class="flex transition-transform duration-300 ease-in-out" id="cases-container">
+<!-- Case 1 -->
+<div class="w-full md:w-1/3 flex-shrink-0 px-4">
+<div class="bg-secondary rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20office%20building%20with%20glass%20facade%2C%20corporate%20headquarters%2C%20professional%20business%20environment%2C%20clean%20architectural%20design%2C%20daytime%20exterior%20shot&width=400&height=250&seq=12347&orientation=landscape" alt="Construtora Almeida" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Construtora Almeida</h3>
+<p class="text-gray-700 mb-4">Implementação de sistema integrado de gestão que reduziu em 40% o tempo de processamento de informações e aumentou a produtividade em 25%.</p>
+<div class="flex items-center text-sm text-gray-500">
+<span class="flex items-center mr-4">
+<i class="ri-calendar-line mr-1"></i> 2023
+</span>
+<span class="flex items-center">
+<i class="ri-service-line mr-1"></i> Desenvolvimento de Software
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 2 -->
+<div class="w-full md:w-1/3 flex-shrink-0 px-4">
+<div class="bg-secondary rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20retail%20store%20interior%2C%20technology%20section%20with%20digital%20displays%2C%20clean%20and%20organized%20retail%20environment%2C%20customers%20shopping%20for%20electronics&width=400&height=250&seq=12348&orientation=landscape" alt="Rede Varejo Tecnológico" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Rede Varejo Tecnológico</h3>
+<p class="text-gray-700 mb-4">Migração completa para infraestrutura em nuvem, resultando em economia de 30% em custos operacionais e aumento de 50% na segurança dos dados.</p>
+<div class="flex items-center text-sm text-gray-500">
+<span class="flex items-center mr-4">
+<i class="ri-calendar-line mr-1"></i> 2022
+</span>
+<span class="flex items-center">
+<i class="ri-service-line mr-1"></i> Cloud Computing
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 3 -->
+<div class="w-full md:w-1/3 flex-shrink-0 px-4">
+<div class="bg-secondary rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20hospital%20interior%20with%20medical%20technology%2C%20clean%20healthcare%20facility%20with%20digital%20equipment%2C%20professional%20medical%20environment&width=400&height=250&seq=12349&orientation=landscape" alt="Hospital São Lucas" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Hospital São Lucas</h3>
+<p class="text-gray-700 mb-4">Implementação de sistema de segurança da informação que garantiu a conformidade com a LGPD e reduziu em 90% os riscos de vazamento de dados.</p>
+<div class="flex items-center text-sm text-gray-500">
+<span class="flex items-center mr-4">
+<i class="ri-calendar-line mr-1"></i> 2023
+</span>
+<span class="flex items-center">
+<i class="ri-service-line mr-1"></i> Segurança da Informação
+</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 4 -->
+<div class="w-full md:w-1/3 flex-shrink-0 px-4">
+<div class="bg-secondary rounded-lg shadow-md overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20logistics%20warehouse%20with%20technology%20integration%2C%20automated%20systems%2C%20workers%20using%20digital%20devices%2C%20clean%20industrial%20environment&width=400&height=250&seq=12350&orientation=landscape" alt="Logística Express" class="w-full h-48 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-bold mb-2">Logística Express</h3>
+<p class="text-gray-700 mb-4">Desenvolvimento de aplicativo de rastreamento que otimizou em 35% as rotas de entrega e reduziu custos operacionais em 20%.</p>
+<div class="flex items-center text-sm text-gray-500">
+<span class="flex items-center mr-4">
+<i class="ri-calendar-line mr-1"></i> 2022
+</span>
+<span class="flex items-center">
+<i class="ri-service-line mr-1"></i> Desenvolvimento de Software
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Controles do Slider -->
+<button class="absolute top-1/2 left-2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-primary z-10 focus:outline-none" id="prev-case">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button class="absolute top-1/2 right-2 transform -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-primary z-10 focus:outline-none" id="next-case">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+<!-- Indicadores -->
+<div class="flex justify-center mt-8 space-x-2" id="case-indicators">
+<button class="w-3 h-3 rounded-full bg-primary" data-index="0"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+</div>
+<!-- Clientes -->
+<div class="mt-20">
+<h3 class="text-2xl font-bold text-center mb-10">Empresas que Confiam em Nós</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-building-4-line ri-3x text-gray-400"></i>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-hospital-line ri-3x text-gray-400"></i>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-store-2-line ri-3x text-gray-400"></i>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-bank-line ri-3x text-gray-400"></i>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-truck-line ri-3x text-gray-400"></i>
+</div>
+</div>
+<div class="flex items-center justify-center">
+<div class="client-logo w-24 h-24 flex items-center justify-center">
+<i class="ri-shopping-bag-line ri-3x text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contato -->
+<section id="contato" class="py-16 md:py-24 bg-secondary">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Entre em Contato</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Estamos prontos para ajudar sua empresa a alcançar todo o seu potencial tecnológico.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/2">
+<form id="contact-form" class="bg-white p-8 rounded-lg shadow-md">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-primary" placeholder="Seu nome completo">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-primary" placeholder="seu.email@empresa.com.br">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-primary" placeholder="(00) 00000-0000">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 font-medium mb-2">Assunto</label>
+<select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-primary pr-8">
+<option value="" selected disabled>Selecione um assunto</option>
+<option value="infraestrutura">Infraestrutura de TI</option>
+<option value="suporte">Suporte Técnico</option>
+<option value="desenvolvimento">Desenvolvimento de Software</option>
+<option value="seguranca">Segurança da Informação</option>
+<option value="consultoria">Consultoria Tecnológica</option>
+<option value="cloud">Cloud Computing</option>
+<option value="outro">Outro</option>
+</select>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-primary" placeholder="Descreva como podemos ajudar sua empresa..."></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Enviar Mensagem</button>
+</form>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white p-8 rounded-lg shadow-md h-full">
+<h3 class="text-2xl font-bold mb-6">Informações de Contato</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Endereço</h4>
+<p class="text-gray-700">Cuiabá - MT, 78085-320</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Telefone</h4>
+<p class="text-gray-700">(65) 99610-5595</p>
+<p class="text-gray-700"></p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">E-mail</h4>
+<p class="text-gray-700">contato@barrostech.com.br</p>
+<p class="text-gray-700">suporte@barrostech.com.br</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mr-4 flex-shrink-0">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900 mb-1">Horário de Atendimento</h4>
+<p class="text-gray-700">Segunda a Sexta: 8h às 18h</p>
+<p class="text-gray-700">Suporte 24/7 para clientes</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<h4 class="font-medium text-gray-900 mb-4">Siga-nos nas Redes Sociais</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-x-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">Barros Tech</a>
+<p class="text-gray-300 mb-6">Soluções completas em tecnologia da informação para empresas de todos os portes.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-300 hover:text-white transition-colors">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors">
+<i class="ri-facebook-fill ri-lg"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors">
+<i class="ri-twitter-x-line ri-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+<ul class="space-y-2">
+<li><a href="#inicio" class="text-gray-300 hover:text-white transition-colors">Início</a></li>
+<li><a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre Nós</a></li>
+<li><a href="#servicos" class="text-gray-300 hover:text-white transition-colors">Serviços</a></li>
+<li><a href="#cases" class="text-gray-300 hover:text-white transition-colors">Cases</a></li>
+<li><a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Serviços</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Infraestrutura de TI</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Suporte Técnico</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Desenvolvimento</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Segurança da Informação</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Consultoria</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Contato</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-map-pin-line mr-3 mt-1"></i>
+<span>Cuiabá - MT, 78085-320</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-3"></i>
+<span>(65) 99610-5595</span>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-3"></i>
+<span>contato@barrostech.com.br</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 Barros Tech. Todos os direitos reservados.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Política de Privacidade</a>
+<a href="#" class="text-gray-400 text-sm hover:text-white transition-colors">Termos de Uso</a>
+</div>
+</div>
+</div>
+</footer>
+<script id="mobile-menu-script">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+// Change icon based on menu state
+const icon = mobileMenuButton.querySelector('i');
+if (mobileMenu.classList.contains('hidden')) {
+icon.className = 'ri-menu-line ri-lg';
+} else {
+icon.className = 'ri-close-line ri-lg';
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenuButton.querySelector('i').className = 'ri-menu-line ri-lg';
+});
+});
+});
+</script>
+<script id="cases-slider-script">
+document.addEventListener('DOMContentLoaded', function() {
+const container = document.getElementById('cases-container');
+const prevBtn = document.getElementById('prev-case');
+const nextBtn = document.getElementById('next-case');
+const indicators = document.getElementById('case-indicators').querySelectorAll('button');
+let currentIndex = 0;
+const slideCount = Math.ceil(container.children.length / (window.innerWidth < 768 ? 1 : 3));
+function updateSlider() {
+const slideWidth = window.innerWidth < 768 ? 100 : 33.333;
+container.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+// Update indicators
+indicators.forEach((indicator, index) => {
+if (index === currentIndex) {
+indicator.classList.remove('bg-gray-300');
+indicator.classList.add('bg-primary');
+} else {
+indicator.classList.remove('bg-primary');
+indicator.classList.add('bg-gray-300');
+}
+});
+}
+// Add click event to prev button
+prevBtn.addEventListener('click', function() {
+currentIndex = Math.max(0, currentIndex - 1);
+updateSlider();
+});
+// Add click event to next button
+nextBtn.addEventListener('click', function() {
+currentIndex = Math.min(slideCount - 1, currentIndex + 1);
+updateSlider();
+});
+// Add click events to indicators
+indicators.forEach((indicator, index) => {
+indicator.addEventListener('click', function() {
+currentIndex = index;
+updateSlider();
+});
+});
+// Update on window resize
+window.addEventListener('resize', function() {
+updateSlider();
+});
+});
+</script>
+<script id="form-validation-script">
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+// Simple validation
+let isValid = true;
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const subject = document.getElementById('subject');
+const message = document.getElementById('message');
+// Reset previous error states
+[name, email, phone, subject, message].forEach(field => {
+field.classList.remove('border-red-500');
+});
+// Validate name
+if (!name.value.trim()) {
+name.classList.add('border-red-500');
+isValid = false;
+}
+// Validate email
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!email.value.trim() || !emailRegex.test(email.value)) {
+email.classList.add('border-red-500');
+isValid = false;
+}
+// Validate phone (optional but if provided, must be valid)
+if (phone.value.trim() && !/^\(\d{2}\) \d{5}-\d{4}$/.test(phone.value)) {
+phone.classList.add('border-red-500');
+isValid = false;
+}
+// Validate subject
+if (!subject.value || subject.value === "") {
+subject.classList.add('border-red-500');
+isValid = false;
+}
+// Validate message
+if (!message.value.trim()) {
+message.classList.add('border-red-500');
+isValid = false;
+}
+if (isValid) {
+// Form is valid, you would normally submit it here
+alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+form.reset();
+} else {
+alert('Por favor, preencha todos os campos obrigatórios corretamente.');
+}
+});
+// Phone mask
+const phone = document.getElementById('phone');
+phone.addEventListener('input', function(e) {
+let value = e.target.value.replace(/\D/g, '');
+if (value.length <= 11) {
+if (value.length > 2) {
+value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+}
+if (value.length > 10) {
+value = `${value.substring(0, 10)}-${value.substring(10)}`;
+}
+e.target.value = value;
+}
+});
+});
+</script>
+<script id="smooth-scroll-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+const headerOffset = 80; // Height of fixed header
+const elementPosition = targetElement.getBoundingClientRect().top;
+const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+window.scrollTo({
+top: offsetPosition,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+</body>
+</html>
